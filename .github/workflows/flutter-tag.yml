@@ -2,6 +2,11 @@ name: Flutter Tag Build
 
 on:
   workflow_dispatch:
+    inputs:
+      custom_tag:
+        description: '手动触发时的 Tag 名称 (留空则默认使用当前分支名)'
+        required: false
+        type: string
   push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
